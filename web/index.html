@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frontend Nginx</title>
+</head>
+<body>
+  <h1>Frontend servido con Nginx</h1>
+  <p id="respuesta"></p>
+
+  <script>
+    fetch("http://localhost:3000/api/hello")
+      .then(r => r.json())
+      .then(d => document.getElementById("respuesta").innerText = d.message)
+      .catch(err => console.error(err));
+  </script>
+</body>
+</html>
